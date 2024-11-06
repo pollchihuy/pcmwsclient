@@ -16,10 +16,12 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         registry.enableSimpleBroker("/topic");
 //        registry.setApplicationDestinationPrefixes("/ws");
     }
+    
 
     @Override
     public void registerStompEndpoints(final StompEndpointRegistry registry) {
-        registry.addEndpoint("/our-websocket")
+//        registry.addEndpoint("/our-websocket")
+        registry.addEndpoint("/rey-websocket")
                 .setHandshakeHandler(new DataCustomerService())
                 .withSockJS();
     }

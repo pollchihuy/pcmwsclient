@@ -10,6 +10,7 @@ import org.springframework.web.socket.server.support.DefaultHandshakeHandler;
 
 import java.security.Principal;
 import java.util.Map;
+import java.util.UUID;
 
 @Component
 public class DataCustomerService extends DefaultHandshakeHandler {
@@ -24,6 +25,7 @@ public class DataCustomerService extends DefaultHandshakeHandler {
         String [] arr = request.getURI().toString().split("/");
         System.out.println("Masuk ke sini !!");
         String randomId = arr[5];
+        String uuidRandom = UUID.randomUUID().toString();
         System.out.println("User dengan ID {"+randomId+"} baru saja terhubung");
         return new UserPrincipal(randomId);
     }
